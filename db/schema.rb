@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180331081329) do
+ActiveRecord::Schema.define(version: 20180331094727) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "statistics", force: :cascade do |t|
+    t.bigint "topic_id"
+    t.string "since_id"
+    t.datetime "done_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["topic_id"], name: "index_statistics_on_topic_id"
+  end
 
   create_table "topics", force: :cascade do |t|
     t.string "name"
@@ -21,4 +30,5 @@ ActiveRecord::Schema.define(version: 20180331081329) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "statistics", "topics"
 end

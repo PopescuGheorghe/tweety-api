@@ -1,4 +1,5 @@
 class Topic < ApplicationRecord
+  has_many :statistics
   validates :name, presence: true
   validates :name, uniqueness: true
   validates :name, length: { maximum: 200 }
