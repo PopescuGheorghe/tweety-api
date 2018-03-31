@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20180331094727) do
   create_table "statistics", force: :cascade do |t|
     t.bigint "topic_id"
     t.string "since_id"
+    t.bigint "count"
     t.datetime "done_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

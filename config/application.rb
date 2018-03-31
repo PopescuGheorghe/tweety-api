@@ -32,7 +32,10 @@ module TweetyApi
 
     paths = [
       "#{Rails.root}/lib",
-      "#{Rails.root}/lib/clients"
+      "#{Rails.root}/lib/clients",
+      "#{Rails.root}/lib/custom",
+      "#{Rails.root}/app/",
+      "#{Rails.root}/app/workers"
     ]
 
     config.eager_load_paths += paths

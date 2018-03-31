@@ -1,0 +1,7 @@
+---
+#:logfile: ./log/sidekiq.log
+#:pidfile: ./tmp/pids/sidekiq.pid
+:concurrency: <%= (ENV['SIDEKIQ_WORKER_THREADS'] || 5).to_i %>
+:verbose: true
+:queues:
+  - default
