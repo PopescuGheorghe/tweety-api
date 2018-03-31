@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 module Api
-  class TopicController < ApplicationController
+  class TopicsController < ApplicationController
     def show
       render json: build_data_object(Topic.find(params[:id]))
     end

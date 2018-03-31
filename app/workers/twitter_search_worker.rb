@@ -1,11 +1,11 @@
 module Workers
   class TwitterSearchWorker
     include Sidekiq::Worker
-    sidekiq_options retry: 2
 
     def perform(*)
+      current_time = Time.current
       Topic.find_each do |topic|
-        ::Workers::HandleTopicSearchWorker.perform_async(topic.id)
+        ::Workers::HandleTopicSearchWorker.perform_async(topic.id, current_time)
       end
     end
   end
