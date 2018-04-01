@@ -2,7 +2,7 @@
 module Api
   class StatisticsController < ApplicationController
     def show
-      render json: build_data_object(Statistic.by_date(date))
+      render json: build_data_object(Statistic.includes(:topic).by_date(date))
     end
 
     private
