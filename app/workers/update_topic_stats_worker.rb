@@ -1,6 +1,5 @@
 module Workers
-  class UpdateTopicStatsWorker
-    include Sidekiq::Worker
+  class UpdateTopicStatsWorker < Workers::BaseWorker
     sidekiq_options retry: 2
 
     def perform(topic_id)

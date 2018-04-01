@@ -1,6 +1,5 @@
 module Workers
-  class HandleTopicSearchWorker
-    include Sidekiq::Worker
+  class HandleTopicSearchWorker < Workers::BaseWorker
     sidekiq_options retry: 2
 
     def perform(topic_id, current_time)

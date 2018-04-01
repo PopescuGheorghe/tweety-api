@@ -1,6 +1,5 @@
 module Workers
-  class TwitterSearchWorker
-    include Sidekiq::Worker
+  class TwitterSearchWorker < Workers::BaseWorker
 
     def perform(*)
       current_time = Time.current
