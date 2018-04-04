@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Workers
   class UpdateTopicStatsWorker < Workers::BaseWorker
     sidekiq_options retry: 2
